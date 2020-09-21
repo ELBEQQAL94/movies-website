@@ -84,7 +84,7 @@ body {
 /*==================
   MAIN CONTENT
 ====================*/
-.main .movies {
+.main .movies, .tv__shows {
     display: flex;
    flex-wrap: wrap;
    justify-content: center;
@@ -96,7 +96,7 @@ body {
     text-align: center;
 }
 
-.main .movies .movie{
+.main .movies .content, .tv__shows .content{
     color: var(--white);
     height: 400px;
     width: 400px;
@@ -105,22 +105,35 @@ body {
     transition: transform 0.5s ease-out;
 }
 
-.main .movies .movie h2 {
+.main .movies .content h2,  .tv__shows .content h2{
     max-height: 16px;
     text-transform: uppercase;
     margin-bottom: 1.2em;
 }
 
-.main .movies .movie:hover {
+.main .movies .content:hover, .tv__shows .content:hover {
     transform: scale(1.04);
 }
 
-.main .movies .movie img {
+.main .movies .content img, .tv__shows .content img {
     padding: 10px;
     margin-top: 1em;
     height: 300px;
     object-fit: contain;
     width: 400px;
+}
+
+/*=====================
+  FOOTER
+=======================*/
+footer {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    background: var(--black);
+    color: var(--white);
 }
 
 /*=====================

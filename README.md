@@ -7,9 +7,9 @@
 * [x] Add rows for fetch movies && tv shows
 * [x] fetch data from server
 * [x] display movies
-* [ ] display Tv Shows
-* [ ] Add footer
-* [ ] Check Responsive
+* [x] display Tv Shows
+* [x] Add footer
+* [x] Check Responsive
 * [ ] Check console for errors
 * [x] Display errors
 * [x] Add image loading

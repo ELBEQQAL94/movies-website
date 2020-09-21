@@ -1,5 +1,6 @@
 // DOM Elements
 const moviesContainer = document.querySelector('.movies');
+const tvShowsContainer = document.querySelector('.tv__shows');
 const movieContainer = document.querySelector('.movie');
 const MessageError = document.querySelector('.message__error');
 const loadingMessage = document.querySelector('.loading__message');
@@ -21,7 +22,9 @@ const baseImgUrl = "https://image.tmdb.org/t/p/original";
 
 // Requests from TMDB Server
 const requests = {
+  // Fetch Tv Shows
   fetchTv: `/discover/movie?api_key=${API_KEY}&with_genres=10770`,
+  // Fetch Movies
   fetchMovies: `/discover/movie?api_key=${API_KEY}`,
 };
 
@@ -46,19 +49,25 @@ async function fetchData(fetchRequest) {
 // LOAD CONTENT
 async function loadContent() {
     const movies = await fetchData(requests.fetchMovies);
+    const tvShows = await fetchData(requests.fetchTv);
     loadImage = false;
-
     if(!loading){
         loadingMessage.style.display = "none";
-        renderContent(movies);
+
+        // Check if movies container is not null
+        if(moviesContainer !== null) {
+            renderContent(movies, moviesContainer);
+        } else {
+            renderContent(tvShows, tvShowsContainer);
+        }
     }
 };
 
 // RENDER MOVIES
-function renderContent(content) {
+function renderContent(content, container) {
     return content.map(({title, backdrop_path, poster_path}) => {
-        moviesContainer.innerHTML += `
-        <div class="movie">
+        container.innerHTML += `
+        <div class="content">
             <h2>${title}</h2>
             <img 
                 style=${loadImage ? '' : 'display: none'}
