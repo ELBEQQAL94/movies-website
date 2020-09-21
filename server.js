@@ -51,7 +51,6 @@ async function fetchData(fetchRequest) {
 async function loadContent() {
     const movies = await fetchData(requests.fetchMovies);
     const tvShows = await fetchData(requests.fetchTvShows);
-    // const tv = await fetchData(requests.fetchTvShows);
     loadImage = false;
     if(!loading){
         loadingMessage.style.display = "none";
@@ -67,7 +66,14 @@ async function loadContent() {
 
 // RENDER MOVIES
 function renderContent(content, container) {
-    return content.map(({title, backdrop_path, poster_path}) => {
+    return content?.map(({
+        title, 
+        name, 
+        original_name, 
+        backdrop_path, 
+        poster_path
+    }) => {
+        title = title || name || original_name;
         container.innerHTML += `
         <div class="content">
             <h2>${title}</h2>

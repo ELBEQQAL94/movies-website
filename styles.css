@@ -143,7 +143,12 @@ footer {
     .main__header {
         padding: 15px;
     }
+    
     .main__header .links .link__item .link {
         font-size: 1em;
+    }
+
+    .main .movies .content h2,  .tv__shows .content h2{
+        text-align: center;
     }
 }
