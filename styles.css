@@ -1,9 +1,26 @@
 :root {
     /* Main Colors */
+    --mainColor: #02020a;
     --black: #000;
     --white: #fff;
+    --yellow: yellow;
     
     /* Main Fonts*/
+}
+
+/* =====================
+   GLOBAL CSS
+========================*/
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 * {
@@ -13,6 +30,65 @@
 }
 
 body {
-    background-color: var(--black);
+    background-color: var(--mainColor);
     color: var(--white);
+}
+
+.active__link {
+    color: var(--yellow);
+}
+
+/* ====================
+   MAIN HEADER
+=======================*/
+.main__header {
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+}
+
+.main__header .logo__container img {
+    width: 100px;
+    object-fit: contain;
+}
+
+.main__header .main__nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__header .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main__header .links .link__item {
+    margin: 0 15px;
+}
+
+.main__header .links .link__item .link {
+    font-size: 1.7em;
+    text-transform: uppercase;
+    transition: color 0.5s linear;
+}
+
+.main__header .links .link__item .link:hover {
+    color: var(--yellow);
+}
+
+/*=====================
+  MEDIA QUERIE
+=======================*/
+@media all and (max-width: 575px){
+    .main__header {
+        padding: 15px;
+    }
+    .main__header .links .link__item .link {
+        font-size: 1em;
+    }
 }

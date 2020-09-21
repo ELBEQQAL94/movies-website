@@ -9,3 +9,5 @@
 * [ ] display movies
 * [ ] display Tv Shows
 * [ ] Add footer
+* [ ] Check Responsive
+* [ ] Check console for errors
