@@ -10,7 +10,6 @@
 * [x] display Tv Shows
 * [x] Add footer
 * [x] Check Responsive
-* [ ] Check console for errors
 * [x] Display errors
 * [x] Add image loading
 * [x] Add spinner for loading data
