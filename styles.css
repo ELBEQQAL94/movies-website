@@ -81,6 +81,44 @@ body {
     color: var(--yellow);
 }
 
+/*==================
+  MAIN CONTENT
+====================*/
+.main .movies {
+    display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   margin-left: 15px;
+   margin-right: 15px;
+}
+
+.main .movies .movie{
+    color: var(--white);
+    height: 400px;
+    width: 400px;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.5s ease-out;
+}
+
+.main .movies .movie h2 {
+    max-height: 16px;
+    text-transform: uppercase;
+    margin-bottom: 1.2em;
+}
+
+.main .movies .movie:hover {
+    transform: scale(1.04);
+}
+
+.main .movies .movie img {
+    padding: 10px;
+    margin-top: 1em;
+    height: 300px;
+    object-fit: contain;
+    width: 400px;
+}
+
 /*=====================
   MEDIA QUERIE
 =======================*/
