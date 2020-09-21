@@ -11,7 +11,6 @@
 * [ ] Add footer
 * [ ] Check Responsive
 * [ ] Check console for errors
-* [ ] Display loading
-* [ ] Display errors
-* [ ] Add image loading
-* [ ] Add spinner for loading data
+* [x] Display errors
+* [x] Add image loading
+* [x] Add spinner for loading data

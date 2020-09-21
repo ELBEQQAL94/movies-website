@@ -1,6 +1,14 @@
-// movies section container
+// DOM Elements
 const moviesContainer = document.querySelector('.movies');
 const movieContainer = document.querySelector('.movie');
+const MessageError = document.querySelector('.message__error');
+const loadingMessage = document.querySelector('.loading__message');
+
+// check if image loaded
+let loadImage = true;
+
+// Loading data from SERVER
+let loading = true;
 
 // API KEY FOR FETCH DATA FROM SERVER
 const API_KEY = "27a06a6fe752225bcecc30870f193be2";
@@ -23,26 +31,44 @@ async function fetchData(fetchRequest) {
         const response = await fetch(`${BASE_URL}${fetchRequest}`);
         const data = await response.json();
         const movies = data.results;
+
+        // SET LOADING TO FALSE
+        loading = false;
+
         return movies;
     } catch(error) {
-        console.log('Error: ', error);
+        loading = false;
+        // display error if movies not loaded
+        MessageError.textContent = error.message;
     }
 };
 
 // LOAD CONTENT
 async function loadContent() {
     const movies = await fetchData(requests.fetchMovies);
-    movies.map(({title, backdrop_path, poster_path}) => {
-        moviesContainer.innerHTML += `<div class="movie">
-        <h2>${title}</h2>
-        <img 
-            src=${baseImgUrl}${backdrop_path || poster_path}
-            alt=${title} 
-            title=${title}
-        >
-    </div>`
-    });
+    loadImage = false;
+
+    if(!loading){
+        loadingMessage.style.display = "none";
+        renderContent(movies);
+    }
 };
 
+// RENDER MOVIES
+function renderContent(content) {
+    return content.map(({title, backdrop_path, poster_path}) => {
+        moviesContainer.innerHTML += `
+        <div class="movie">
+            <h2>${title}</h2>
+            <img 
+                style=${loadImage ? '' : 'display: none'}
+                src=${baseImgUrl}${backdrop_path || poster_path}
+                alt=${title} 
+                title=${title}
+                onload=${loadImage}
+            >
+        </div>`
+    });
+}
 loadContent();
 

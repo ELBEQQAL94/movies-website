@@ -92,6 +92,10 @@ body {
    margin-right: 15px;
 }
 
+.main .message__error {
+    text-align: center;
+}
+
 .main .movies .movie{
     color: var(--white);
     height: 400px;
