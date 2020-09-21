@@ -22,10 +22,11 @@ const baseImgUrl = "https://image.tmdb.org/t/p/original";
 
 // Requests from TMDB Server
 const requests = {
-  // Fetch Tv Shows
-  fetchTv: `/discover/movie?api_key=${API_KEY}&with_genres=10770`,
-  // Fetch Movies
-  fetchMovies: `/discover/movie?api_key=${API_KEY}`,
+    // Fetch Tv Shows
+   fetchTvShows: `/discover/tv?api_key=${API_KEY}`,
+
+   // Fetch Movies
+   fetchMovies: `/discover/movie?api_key=${API_KEY}`,
 };
 
 // FETCH SPECIFIC DATA FROM SERVER
@@ -49,7 +50,8 @@ async function fetchData(fetchRequest) {
 // LOAD CONTENT
 async function loadContent() {
     const movies = await fetchData(requests.fetchMovies);
-    const tvShows = await fetchData(requests.fetchTv);
+    const tvShows = await fetchData(requests.fetchTvShows);
+    // const tv = await fetchData(requests.fetchTvShows);
     loadImage = false;
     if(!loading){
         loadingMessage.style.display = "none";
