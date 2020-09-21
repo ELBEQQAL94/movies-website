@@ -43,7 +43,7 @@ async function fetchData(fetchRequest) {
         loading = false;
         // display error if movies not loaded
         MessageError.textContent = error.message;
-    }
+    };
 };
 
 // LOAD CONTENT
@@ -59,8 +59,8 @@ async function loadContent() {
             renderContent(movies, moviesContainer);
         } else {
             renderContent(tvShows, tvShowsContainer);
-        }
-    }
+        };
+    };
 };
 
 // RENDER MOVIES
@@ -78,6 +78,7 @@ function renderContent(content, container) {
             >
         </div>`
     });
-}
+};
+
 loadContent();
 
