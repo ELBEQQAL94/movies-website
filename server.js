@@ -1,6 +1,6 @@
 // DOM Elements
-const moviesContainer = document.querySelector('.movies');
-const tvShowsContainer = document.querySelector('.tv__shows');
+const moviesContainer = document.querySelector('.movies__container');
+const tvShowsContainer = document.querySelector('.tvShows__container');
 const movieContainer = document.querySelector('.movie');
 const MessageError = document.querySelector('.message__error');
 const loadingMessage = document.querySelector('.loading__message');
@@ -75,15 +75,17 @@ function renderContent(content, container) {
     }) => {
         title = title || name || original_name;
         container.innerHTML += `
-        <div class="content">
-            <h2>${title}</h2>
-            <img 
-                style=${loadImage ? '' : 'display: none'}
-                src=${baseImgUrl}${backdrop_path || poster_path}
-                alt=${title} 
-                title=${title}
-                onload=${loadImage}
-            >
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="content">
+                <h2>${title}</h2>
+                <img 
+                    style=${loadImage ? '' : 'display: none'}
+                    src=${baseImgUrl}${backdrop_path || poster_path}
+                    alt=${title} 
+                    title=${title}
+                    onload=${loadImage}
+                >
+            </div>
         </div>`
     });
 };

@@ -49,78 +49,67 @@ body {
     padding: 60px;
 }
 
+.main__header .navbar-toggler {
+    background: var(--white) !important;
+}
+
 .main__header .logo__container img {
     width: 100px;
     object-fit: contain;
 }
 
-.main__header .main__nav {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.main__header .links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.main__header .links .link__item {
+.main__header .navbar-nav .nav-item {
     margin: 0 15px;
 }
 
-.main__header .links .link__item .link {
+.main__header .navbar-nav .nav-item .nav-link {
     font-size: 1.7em;
     text-transform: uppercase;
     transition: color 0.5s linear;
 }
 
-.main__header .links .link__item .link:hover {
+.main__header .navbar-nav .nav-item .nav-link:hover {
     color: var(--yellow);
 }
 
 /*==================
   MAIN CONTENT
 ====================*/
-.main .movies, .tv__shows {
-    display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   margin-left: 15px;
-   margin-right: 15px;
-}
-
 .main .message__error {
     text-align: center;
 }
 
-.main .movies .content, .tv__shows .content{
+.main .movies .row > div, 
+.main .tv__shows .row > div {
+    margin-bottom: 2em;
+}
+
+.main .movies .content, 
+.tv__shows .content {
     color: var(--white);
-    height: 400px;
-    width: 400px;
-    padding: 10px;
     cursor: pointer;
     transition: transform 0.5s ease-out;
 }
 
-.main .movies .content h2,  .tv__shows .content h2{
-    max-height: 16px;
+.main .movies .content h2,  
+.tv__shows .content h2 {
+    max-height: 42px;
     text-transform: uppercase;
     margin-bottom: 1.2em;
 }
 
-.main .movies .content:hover, .tv__shows .content:hover {
+.main .movies .content:hover, 
+.tv__shows .content:hover {
     transform: scale(1.04);
 }
 
-.main .movies .content img, .tv__shows .content img {
+.main .movies .content img, 
+.tv__shows .content img {
     padding: 10px;
     margin-top: 1em;
     height: 300px;
     object-fit: contain;
-    width: 400px;
+    width: 100%;
 }
 
 /*=====================
@@ -140,15 +129,36 @@ footer {
   MEDIA QUERIE
 =======================*/
 @media all and (max-width: 575px){
+
+    /*====================
+        MAIN HEADER
+    ====================== */
     .main__header {
         padding: 15px;
     }
-    
+
+    /*====================
+        MAIN CONTENT
+    ====================== */
+    .main .movies .row > div, 
+    .tv__shows .row > div {
+        padding: 30px;
+    } 
+
     .main__header .links .link__item .link {
         font-size: 1em;
     }
 
-    .main .movies .content h2,  .tv__shows .content h2{
+    .main .movies .content h2,  
+    .tv__shows .content h2{
+        font-size: 1.2em;
         text-align: center;
+        max-height: 16px;
+    }
+
+    .main .movies .content img, 
+    .tv__shows .content img {
+        height: 150px;
+        width: 100%;
     }
 }

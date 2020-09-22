@@ -13,3 +13,5 @@
 * [x] Display errors
 * [x] Add image loading
 * [x] Add spinner for loading data
+* [x] Add bootstrap
+* [ ] Seperate code into files
