@@ -14,4 +14,7 @@
 * [x] Add image loading
 * [x] Add spinner for loading data
 * [x] Add bootstrap
-* [ ] Seperate code into files
+* [x] Seperate code into files
+* [x] Install browserfiy global
+ 
+* Note: Bundle js file by run: browserify server.js -o bundle.js
